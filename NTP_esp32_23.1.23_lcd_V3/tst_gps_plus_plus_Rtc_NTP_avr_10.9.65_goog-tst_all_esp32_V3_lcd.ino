@@ -28,7 +28,7 @@ byte mac[] = {                    // LM: Substitute fake MAC address associated 
 //0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF
   0x02, 0xB6, 0x7E, 0x00, 0x00, 0x02 };
 //#define time_offset   25200 
-IPAddress ip(192, 168, 3, 250);
+IPAddress ip(XXX, XXX, XXX, XXX); //set ip
 
 static const int NTP_PACKET_SIZE = 48;
 
@@ -231,57 +231,7 @@ if (gps.time.isValid()){
 
   
   SAT = gps.satellites.value();
-  /*
-        // add the offset to get local time
-       // adjustTime(time_offset);
-       
- Serial.print(Year);
- Serial.print("/");
- Serial.print(Month);
-  Serial.print("/");
- Serial.print(Day);
-  Serial.print("  ");\
-  if(Hour < 10)Serial.print("0");
- Serial.print(Hour);
- Serial.print(":");
- if(Minute < 10)Serial.print("0");
- Serial.print(Minute);
-  Serial.print(":");
- if(Second < 10)Serial.print("0");
- Serial.print(Second);
- Serial.print(".");
- //Serial.print(Centisecond);
-
-//====================Read-RTC================//
-DateTime now = rtc.now();
-  Serial.print("  ");
-  Serial.print(now.year());
-  Serial.print("/");
-  Serial.print(now.month());
-  Serial.print("/");
-  Serial.print(now.day());
-  Serial.print("  ");\
-  if(now.hour() < 10)Serial.print("0");
- Serial.print(now.hour());
- Serial.print(":");
- if(now.minute() < 10)Serial.print("0");
- Serial.print(now.minute());
-  Serial.print(":");
- if(now.second() < 10)Serial.print("0");
- Serial.print(now.second());
- Serial.print("  ");
- Serial.print("GPS_available = ");
- Serial.print(GPS_available);
- Serial.print(" RTC_Update = ");
- Serial.print(RTC_Update);
- Serial.print(" gpstime = ");
- Serial.print(gps.time.isValid());
- Serial.print(" gpsdate = ");
- Serial.println(gps.date.isValid());
  
-// Serial.print(".");
-// Serial.println(now.centisecond());       
-/*
         if (gps.location.isValid())
   {
     Serial.print(gps.location.lat(), 6);
